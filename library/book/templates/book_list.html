@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<h1>Book list</h1>
+<div class="container">
+  {% for item in book_list%}
+  <div class="row">
+    <div class="column">
+      <p><a href=" {% url 'book_item' pk=item.pk %}"> {{ item.name }} </a></p>
+      <p><span>by {{item.author}} </span></p>
+      {% if item.borrow == 0 %}
+      <p id="borrow">Available for borrowing</p>
+      {% else %}
+      <p id="borrow">Not in the library</p>
+      {% endif %}
+    </div>
+
+    <div class="column">
+      <img src="/book/static/img/{{item.name}}.jpg" alt="{{item.name}}" />
+    </div>
+  </div>
+  {% endfor %} {% endblock %}
+</div>

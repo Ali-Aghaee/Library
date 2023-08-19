@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <span>
+      <a href="{% url 'book_list' %}">Book list</a>
+    </span>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <h2>{{item.name}}</h2>
+        <p>Author : {{item.author}}</p>
+        <p>Publisher : {{item.publisher}}</p>
+        <p>Publication year : {{item.publication_year}}</p>
+        <p>Category : {{item.category}}</p>
+      </div>
+      <!--End col-->
+      <!--Begin col-->
+      <div class="column">
+        <img src="/book/static/img/{{item.name}}.jpg" alt="{{item.name}}" />
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}

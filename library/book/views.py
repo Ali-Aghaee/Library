@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Book,Category
+from .models import Book
+
 
 # Create your views here.
 
@@ -17,5 +18,7 @@ def SingleBook(request, pk):
         queryset = ''
     return render(request, 'single_book.html', {'item': queryset})
         
-        
+
+
+    
     

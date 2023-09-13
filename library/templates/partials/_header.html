@@ -1,0 +1,10 @@
+{% load static %}
+
+<header>
+  <img src="{% static 'img/logo.png' %}" />
+</header>
+{% if request.user.is_authenticated %}
+<p><a id="log" href="{% url 'user' %}">{{request.user.username}}</a></p>
+{% else %}
+<p><a id="log" href="{% url 'login' %}">login</a></p>
+{% endif %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+<h1>Sign up</h1>
+<span>
+  <a href="{% url 'book_list' %}">Book list</a>
+</span>
+<form method="post">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" id="button" />
+</form>
+<p>
+  you allready have an account? <a href= "{% url 'login' %}">login</a></p> {% endblock %}
+</p>
